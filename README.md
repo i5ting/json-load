@@ -1,6 +1,6 @@
 # loadjson
 
-load json safety
+load json safety && mock api
 
 ## Installation
 
