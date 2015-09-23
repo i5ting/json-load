@@ -4,7 +4,7 @@ load json safety
 
 ## Installation
 
-`npm install loadjson`
+`npm install --save loadjson`
 
 ## Usage
 
