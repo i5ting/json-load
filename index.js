@@ -1,6 +1,6 @@
 var fs = require('fs')
 module.exports = function(source) {
-	var file;
+  var file;
   var json = {
     error: "source is not exist,please check",
     detail:{ 
