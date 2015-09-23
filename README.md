@@ -27,7 +27,6 @@ var loadjson = require('loadjson');
 var config = loadjson('package.json', 0);
 
 if (!config.error){
-  console.log(config);
   console.log(config.data.name);
 }
 ```
@@ -39,8 +38,18 @@ var loadjson = require('loadjson');
 var config = loadjson('package.json', 1);
 
 if (!config.error){
-  console.log(config);
   console.log(config.data.name);
+}
+```
+
+or api error with custom msg
+
+```
+var loadjson = require('loadjson');
+var config = loadjson('package.json', 1, 'some reason');
+
+if (!config.error){
+  console.log(config.status.msg == 'some reason');
 }
 ```
 

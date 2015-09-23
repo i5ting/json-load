@@ -1,7 +1,7 @@
 var fs = require('fs')
 module.exports = function(source) {
   var file
-    ,is_api;
+    ,api_type;
     
   var json = {
     error: "source is not exist,please check",
@@ -9,8 +9,8 @@ module.exports = function(source) {
     }
   };
   
-  if (arguments.length == 2) {
-    is_api = arguments[1];
+  if (arguments.length >= 2) {
+    api_type = arguments[1];
   }
 
   if ( typeof source === "string" ){
@@ -33,17 +33,31 @@ module.exports = function(source) {
       detail : error
     }
   }
-
-  return arguments.length == 2 ? json_parse_api(json, is_api) : JSON.parse(json);
+  
+  if( arguments.length >= 3){
+    var msg = arguments[2];
+    return json_parse_api(json, api_type, msg) ;
+  } else if(arguments.length == 2){
+    return json_parse_api(json, api_type);  
+  }else{
+    return JSON.parse(json);
+  }
 }
 
 function json_parse_api(json, api_type){
+  // console.log(api_type)
+  var msg;
+  if(arguments.length >= 3){
+    msg = arguments[2];
+  }
+  // console.log(msg)
+  
   if(api_type == 0){
     return {
       data: JSON.parse(json),
       status: {
         code : 0,
-        msg  : 'sucess'
+        msg  : msg  ? msg : 'sucess'
       }
     }
   }else{
@@ -51,7 +65,7 @@ function json_parse_api(json, api_type){
       data: JSON.parse(json),
       status: {
         code : api_type,
-        msg  : 'error'
+        msg  : msg ? msg : 'error'
       }
     }
   }
