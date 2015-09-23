@@ -1,17 +1,17 @@
-# json-load
+# loadjson
 
 load json safety
 
 ## Installation
 
-`npm install json-load`
+`npm install loadjson`
 
 ## Usage
 
 ``` javascript
-var json-load = require('json-load')
+var loadjson = require('loadjson')
 
-var config = json-load('package.json')
+var config = loadjson('package.json')
 
 if (!config.error){
   console.log(config);

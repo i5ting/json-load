@@ -1,5 +1,5 @@
 {
-  "name": "json-load",
+  "name": "loadjson",
   "version": "1.0.1",
   "description": "load json safety",
   "main": "index.js",
