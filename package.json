@@ -1,6 +1,6 @@
 {
   "name": "loadjson",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "load json safety",
   "main": "index.js",
   "scripts": {
